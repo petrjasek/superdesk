@@ -81,6 +81,7 @@ module.exports = function(grunt) {
                 'urgency'
             ],
             firstLine: [
+                'slugline',
                 'headline',  
                 'highlights',
                 'markedDesks',
