@@ -102,6 +102,23 @@
         }
     },
     {
+        "_id": "coverage_providers",
+        "display_name": "Coverage providers",
+        "type": "manageable",
+        "selection_type": "do not show",
+        "unique_field": "qcode",
+        "items": [
+            {"is_active": true, "name": "Stringer", "qcode": "stringer", "contact_type": "stringer"},
+            {"is_active": true, "name": "Freelancer", "qcode": "freelancer", "contact_type": "freelancer"},
+            {"is_active": true, "name": "Columnist", "qcode": "columnist", "contact_type": "columnist"}
+        ],
+        "schema" : {
+            "name" : {},
+            "qcode" : {},
+            "contact_type" : {}		
+        }
+    },
+    {
         "_id": "categories",
         "display_name": "Categories",
         "type": "manageable",
