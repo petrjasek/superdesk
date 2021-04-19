@@ -5,11 +5,15 @@ services:
     image: mongo:4.4
     expose:
       - "27017"
+    networks:
+      - superdesk
 
   redis:
     image: redis:3
     expose:
       - "6379"
+    networks:
+      - superdesk
     
   elastic:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.10.1
@@ -19,6 +23,8 @@ services:
     expose:
       - "9200"
       - "9300"
+    networks:
+      - superdesk
     ulimits:
       memlock:
         soft: -1
@@ -35,6 +41,8 @@ services:
       - redis
       - mongo
       - elastic
+    networks:
+      - superdesk
     environment:
       - WEB_CONCURRENCY=2
       # If not hosting on localhost, change this line
@@ -60,3 +68,9 @@ services:
       - superdesk-server
     ports:
       - "8080:80"
+    networks:
+      - superdesk
+
+networks:
+  superdesk:
+    driver: bridge
