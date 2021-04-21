@@ -5,7 +5,7 @@
     "schema": {
       "calendars": {
         "type": "list",
-        "required": true,
+        "required": false,
         "mandatory_in_list": null,
         "schema": null
       },
