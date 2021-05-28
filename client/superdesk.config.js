@@ -8,15 +8,12 @@ module.exports = function(grunt) {
     return {
         apps: [
             'superdesk-planning',
-            'superdesk.analytics',
         ],
         importApps: [
             '../index',
-            'superdesk-analytics',
             'superdesk-planning',
         ],
-
-        defaultRoute: '/workspace/monitoring',
+        defaultRoute: '/workspace/personal',
 
         langOverride: {
             en: {
@@ -45,9 +42,9 @@ module.exports = function(grunt) {
 
         features: {
             preview: 1,
-            swimlane: {columnsLimit: 99},
-            swimlane: {defaultNumberOfColumns: 4},
+            swimlane: {columnsLimit: 99, defaultNumberOfColumns: 4},
             editor3: true,
+            validatePointOfInterestForImages: true,
             editorHighlights: true,
             noPublishOnAuthoringDesk: true,
             customAuthoringTopbar: {
@@ -63,7 +60,7 @@ module.exports = function(grunt) {
             autorefreshContent: true,
             nestedItemsInOutputStage: true,
         },
-        
+
         item_profile: { change_profile: 1 },
 
         workspace: {
@@ -71,10 +68,10 @@ module.exports = function(grunt) {
             planning: true,
             assignments: true,
         },
-        
+
         ui: {
             italicAbstract: false,
-            },
+        },
 
         list: {
             priority: [

@@ -14,45 +14,39 @@ from superdesk.default_settings import INSTALLED_APPS, strtobool, env
 
 ABS_PATH = str(Path(__file__).resolve().parent)
 
-init_data = Path(ABS_PATH) / 'data'
+init_data = Path(ABS_PATH) / "data"
 if init_data.exists():
     INIT_DATA_PATH = init_data
 
 INSTALLED_APPS.extend([
     'apps.languages',
     'planning',
-    'analytics',
     'superdesk.macros.imperial',
 ])
 
 RENDITIONS = {
-    'picture': {
-        'thumbnail': {'width': 220, 'height': 120},
-        'viewImage': {'width': 640, 'height': 640},
-        'baseImage': {'width': 1400, 'height': 1400},
+    "picture": {
+        "thumbnail": {"width": 220, "height": 120},
+        "viewImage": {"width": 640, "height": 640},
+        "baseImage": {"width": 1400, "height": 1400},
     },
-    'avatar': {
-        'thumbnail': {'width': 60, 'height': 60},
-        'viewImage': {'width': 200, 'height': 200},
-    }
+    "avatar": {
+        "thumbnail": {"width": 60, "height": 60},
+        "viewImage": {"width": 200, "height": 200},
+    },
 }
 
-WS_HOST = env('WSHOST', '0.0.0.0')
-WS_PORT = env('WSPORT', '5100')
+WS_HOST = env("WSHOST", "0.0.0.0")
+WS_PORT = env("WSPORT", "5100")
 
-LOG_CONFIG_FILE = env('LOG_CONFIG_FILE', 'logging_config.yml')
+LOG_CONFIG_FILE = env("LOG_CONFIG_FILE", "logging_config.yml")
 
-REDIS_URL = env('REDIS_URL', 'redis://localhost:6379')
-if env('REDIS_PORT'):
-    REDIS_URL = env('REDIS_PORT').replace('tcp:', 'redis:')
-BROKER_URL = env('CELERY_BROKER_URL', REDIS_URL)
+REDIS_URL = env("REDIS_URL", "redis://localhost:6379")
+if env("REDIS_PORT"):
+    REDIS_URL = env("REDIS_PORT").replace("tcp:", "redis:")
+BROKER_URL = env("CELERY_BROKER_URL", REDIS_URL)
 
-SECRET_KEY = env('SECRET_KEY', '')
-
-# Highcharts Export Server - default settings
-ANALYTICS_ENABLE_SCHEDULED_REPORTS = strtobool(
-    env('ANALYTICS_ENABLE_SCHEDULED_REPORTS', 'true')
-)
+SECRET_KEY = env("SECRET_KEY", "")
 
 MACROS_MODULE = env('MACROS_MODULE', 'macros')
 
@@ -66,26 +60,12 @@ HIGHCHARTS_LICENSE_CUSTOMER_ID = '2'
 HIGHCHARTS_LICENSE_EXPIRY = 'Perpetual'
 
 DEFAULT_LANGUAGE = 'en'
-LANGUAGES = [
-    {'language': 'en', 'label': 'English', 'source': True, 'destination': True},
-    {'language': 'en-GB', 'label': 'English (GB)', 'source': True, 'destination': True},
-    {'language': 'fr', 'label': 'French', 'source': True, 'destination': True},
-    {'language': 'ar', 'label': 'Arabic', 'source': True, 'destination': True},
-    {'language': 'de', 'label': 'German', 'source': True, 'destination': True},
-    {'language': 'no', 'label': 'Norwegian', 'source': True, 'destination': True},
-    {'language': 'pt-PT', 'label': 'Portugese', 'source': True, 'destination': True},
-    {'language': 'pt-BR', 'label': 'Portugese (Brazil)', 'source': True, 'destination': True},
-    {'language': 'zh-Hans', 'label': 'Chinese (分类)', 'source': True, 'destination': True},
-    {'language': 'dk', 'label': 'Danish', 'source': True, 'destination': True},
-    {'language': 'es', 'label': 'Spanish', 'source': True, 'destination': True},
-    {'language': 'se', 'label': 'Swedish', 'source': True, 'destination': True},
-    {'language': 'cz', 'label': 'Czech', 'source': True, 'destination': True}
-]
 
 GENERATE_SHORT_GUID = True
 
 ARCHIVE_AUTOCOMPLETE = True
 ARCHIVE_AUTOCOMPLETE_DAYS = 30
+
 KEYWORDS_ADD_MISSING_ON_PUBLISH = True
 
 # publishing of associated and related items
@@ -102,7 +82,7 @@ DISALLOWED_CHARACTERS = ['!', '$', '%', '&', '"', '(', ')', '*', '+', ',', '.', 
                          '>', '?', '@', '[', ']', '\\', '^', '_', '`', '{', '|', '}', '~']
 
 # This value gets injected into NewsML 1.2 and G2 output documents.
-NEWSML_PROVIDER_ID = 'sourcefabric.org'
+NEWSML_PROVIDER_ID = 'superdesk.pro'
 ORGANIZATION_NAME = env('ORGANIZATION_NAME', 'Sourcefabric')
 ORGANIZATION_NAME_ABBREVIATION = env('ORGANIZATION_NAME_ABBREVIATION', 'SoFab')
 
@@ -171,3 +151,5 @@ VALIDATOR_MEDIA_METADATA = {
         "required": False,
     },
 }
+
+NINJS_PLACE_EXTENDED = True

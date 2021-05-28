@@ -19,6 +19,10 @@
         "type": "list",
         "required": false,
         "nullable": false
+      },
+      "language": {
+        "type": "string",
+        "required": true
       }
     },
     "editor": {
@@ -30,8 +34,19 @@
       },
       "subject": {
         "enabled": true
+      },
+      "language": {
+        "enabled": true
       }
-    }
+    },
+    "list": {
+      "primary_fields": [
+        "slugline",
+        "internalnote",
+        "name"
+      ]
+    },
+    "init_version": 1
   },
   {
     "_id": "planning",
@@ -80,6 +95,10 @@
       "files": {
         "required": false,
         "type": "list"
+      },
+      "language": {
+        "type": "string",
+        "required": true
       }
     },
     "editor": {
@@ -121,6 +140,9 @@
       },
       "subject": {
         "enabled": true
+      },
+      "language": {
+        "enabled": true
       }
     },
     "list": {
@@ -129,6 +151,23 @@
         "internalnote",
         "name"
       ]
+    },
+    "init_version": 1
+  },
+  {
+    "_id": "coverage",
+    "name": "coverage",
+    "init_version": 1,
+    "schema": {
+      "language": {
+        "type": "string",
+        "required": true
+      }
+    },
+    "editor": {
+      "language": {
+        "enabled": true
+      }
     }
   }
 ]
