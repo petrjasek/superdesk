@@ -1,7 +1,14 @@
 {
     "name": "superdesk",
-    "license": "GPL-3.0",
+    "license": "AGPL-3.0",
     "dependencies": {
-        "superdesk-core": "tomaskikutis/superdesk-client-core#content-profiles-for-non-text-content-types"
+        "superdesk-core": "github:tomaskikutis/superdesk-client-core#content-profiles-for-non-text-content-types",
+        "superdesk-planning": "github:superdesk/superdesk-planning#develop"
+    },
+    "scripts": {
+        "build": "npx @superdesk/build-tools build-root-repo ./"
+    },
+    "devDependencies": {
+        "@superdesk/build-tools": "^1.0.18"
     }
 }
