@@ -1,5 +1,5 @@
 gunicorn>=20.0.4,<20.1
 honcho==1.0.1
 
--e git+https://github.com/petrjasek/superdesk-core.git@feat-default-content-types-rebased#egg=superdesk-core
+-e git+https://github.com/superdesk/superdesk-core.git@feat-content-profiles#egg=superdesk-core
 -e git+https://github.com/superdesk/superdesk-planning.git@develop#egg=superdesk-planning
