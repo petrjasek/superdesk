@@ -6,8 +6,12 @@
  */
 module.exports = function(grunt) {
     return {
+        apps: [
+            'superdesk-planning',
+        ],
         importApps: [
             '../index',
+            'superdesk-planning',
         ],
         defaultRoute: '/workspace/personal',
 
