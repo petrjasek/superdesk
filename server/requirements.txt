@@ -112,13 +112,13 @@ flask-script==2.0.6
     # via superdesk-core
 future==0.18.3
     # via python-twitter
-gunicorn==20.0.4
+gunicorn==20.1.0
     # via -r requirements.in
 hachoir==3.0a3
     # via superdesk-core
 hermescache==0.10.0
     # via superdesk-core
-honcho==1.0.1
+honcho==1.1.0
     # via -r requirements.in
 httplib2==0.22.0
     # via oauth2client
