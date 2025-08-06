@@ -26,3 +26,12 @@ jobs:
     - run: docker build .
       working-directory: ./client
       timeout-minutes: 20
+
+  compose:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - run: docker compose build
+      timeout-minutes: 20
